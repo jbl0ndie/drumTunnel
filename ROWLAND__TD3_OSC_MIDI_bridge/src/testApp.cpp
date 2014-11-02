@@ -24,8 +24,7 @@ void testApp::setup() {
     ofSetFrameRate(60);
     
     
-    bg.loadImage("DrumTunnel_BG_RS.jpg");
-    
+    bg.loadImage("../../data/DrumTunnel_BG_RS.jpg"); //loads interface image
     
     
     
