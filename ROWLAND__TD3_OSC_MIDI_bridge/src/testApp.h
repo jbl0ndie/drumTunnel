@@ -14,6 +14,9 @@
 
 #include "ofxMidi.h"
 //#include "ofxOsc.h"
+#include "simpleParticleManager.h"
+#include "trailShaderAddon.h"
+#include "ofxGui.h"
 
 #define HOST "localhost"
 #define PORT_OUT 12333
@@ -58,11 +61,23 @@ public:
     struct input{
         int id_num;
         ofColor colour = ofColor(0);
+        ofVec2f pos;
     };
     
     vector<input> inputList;
     
     ofImage bg;
+    
+    simpleParticleManager pm;
+    trailShader ts;
+    
+    
+    bool drawGui;
+    ofxGuiGroup gui;
+    ofxSlider<float> scale;
+    ofxSlider<float> attack;
+    ofxSlider<float> decay;
+    
     
     
 };

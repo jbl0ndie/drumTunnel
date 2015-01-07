@@ -11,10 +11,14 @@
 #include "testApp.h"
 
 #define NUM_INPUTS 13
+#define NUM_P 10000
+#define LIFE 2000
 
 int timeF=0;
 int prevTime=0;
+int dist = 730;
 
+ofVec2f vel = ofVec2f(0,-3);
 
 int inputs[NUM_INPUTS] = {36,38,22,42,26,46,44,48,41,55,49,51,53};
 //--------------------------------------------------------------
@@ -27,7 +31,19 @@ void testApp::setup() {
     bg.loadImage("DrumTunnel_BG_RS.jpg");
     
     
+    gui.setup();
+    gui.setPosition(20,20);
+    gui.add(scale.setup("Scale", 1.0, 0.0, 1.0));
+    gui.add(attack.setup("Attack", 1.0, 0.0, 1.0));
+    gui.add(decay.setup("Decay", 1.0, 0, 1));
     
+    //bg.loadImage("/Users/Adam/Downloads/of_v0.8.0_osx_release/apps/drumTunnel/ROWLAND__TD3_OSC_MIDI_bridge/data/DrumTunnel_BG_RS.jpg");
+    
+    
+    pm.setCount(NUM_P);
+    
+    ts.init();
+    //../data/DrumTunnel_BG_RS.jpg
     
     
     
@@ -63,22 +79,22 @@ void testApp::setup() {
     
     
     // print the available output ports to the console
-	midiOut.listPorts(); // via instance
+	//midiOut.listPorts(); // via instance
 	//ofxMidiOut::listPorts(); // via static too
 	
 	// connect
-	midiOut.openPort(0); // by number
+	//midiOut.openPort(0); // by number
 	//midiOut.openPort("IAC Driver Pure Data In"); // by name
 	//midiOut.openVirtualPort("ofxMidiOut"); // open a virtual port
 	
-	channel = 1;
-	currentPgm = 0;
-	note = 0;
-	velocity = 0;
-	pan = 0;
-	bend = 0;
-	touch = 0;
-	polytouch = 0;
+//	channel = 1;
+//	currentPgm = 0;
+//	note = 0;
+//	velocity = 0;
+//	pan = 0;
+//	bend = 0;
+//	touch = 0;
+//	polytouch = 0;
     
     
     //receiver.setup(PORT_IN);
@@ -87,16 +103,22 @@ void testApp::setup() {
     for (int i=0; i<NUM_INPUTS; i++) {
         input in;
         in.id_num = inputs[i];
+        in.pos    = ofVec2f(i*40,0);
         inputList.push_back(in);
+
     }
-    
-    
-    
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
     
+    pm.setCount(NUM_P);
+    pm.setLife(LIFE);
+    pm.update();
+    
+
+    
+
     /*
 
     while(receiver.hasWaitingMessages()){
@@ -227,10 +249,34 @@ void testApp::draw() {
     }
     
     
+    ts.begin();
+    ofFill();
+    ofSetColor(255);
+    for (int i=0; i<NUM_P; i++) {
+        if ( pm.getActive(i) == true){
+            ofVec2f pos = pm.getPosition(i);
+            ofSetColor(pm.getColour(i));
+            ofRect(pos.x, (pos.y*scale)+dist, 40,5);
+        }
+    }
+    ts.end(attack,decay);
+    
+    ofSetColor(255);
+    ofStyle style;
+    style.blendingMode = OF_BLENDMODE_ADD;
+    ofPushStyle();
+    ofSetStyle(style);
+    ts.draw(0,0);
+    ofPopStyle();
+    
+    if (drawGui){
+        gui.draw();
+    }
+    
+    ofDrawBitmapString("Press 'g' for gui", 20, 15);
     
     
-    
-    //	stringstream text;
+//    //	stringstream text;
 //	text << "connected to port " << midiOut.getPort()
 //    << " \"" << midiOut.getName() << "\"" << endl
 //    << "is virtual?: " << midiOut.isVirtual() << endl << endl
@@ -242,7 +288,7 @@ void testApp::draw() {
 //    << "bend: " << bend << endl
 //    << "touch: " << touch << endl
 //    << "polytouch: " << polytouch;
-	//ofDrawBitmapString(text.str(), 20, 300);
+//	ofDrawBitmapString(text.str(), 20, 300);
 }
 
 //--------------------------------------------------------------
@@ -260,6 +306,7 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
 	// make a copy of the latest message
 	midiMessage = msg;
     
+
     if (midiMessage.channel == 10) {
         
 
@@ -272,12 +319,10 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
             input &drum = inputList[i];
             
             if (drum.id_num == pitch) {
-                drum.colour = ofColor(255);
+                drum.colour = ofColor(255,0,100);
+                pm.emit(drum.colour, drum.pos, vel);
             }
         }
-        
-    
-
     }
     
     
@@ -398,6 +443,9 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
     
+    if (key == 'g') {
+        drawGui = !drawGui;
+    }
     /*
 	if(key == 'a' || key == 'A'){
 		ofxOscMessage m;
@@ -408,13 +456,42 @@ void testApp::keyPressed(int key) {
         //		m.addFloatArg(ofGetElapsedTimef());
 		sender.sendMessage(m);
 	}
+     */
+    
+    
+    ofVec2f p1;
+    ofColor col;
 
 	switch(key) {
-		case 'l':
-			midiIn.listPorts();
-			break;
+
+		case '1':
+            p1 = ofVec2f(0,0);
+            col = ofColor(255,0,100);
+            pm.emit(col, p1, vel);
+            break;
+            
+
+        case '2':
+            p1 = ofVec2f(40,0);
+            col = ofColor(255,0,100);
+            pm.emit(col, p1, vel);
+            break;
+		
+        case '3':
+            p1 = ofVec2f(80,0);
+            col = ofColor(255,0,100);
+            pm.emit(col, p1, vel);
+            break;
+            
+            
+        case '4':
+            p1 = ofVec2f(120,0);
+            col = ofColor(255,0,100);
+            pm.emit(col, p1, vel);
+            break;
 	}
-     */
+    
+
 }
 
 //--------------------------------------------------------------

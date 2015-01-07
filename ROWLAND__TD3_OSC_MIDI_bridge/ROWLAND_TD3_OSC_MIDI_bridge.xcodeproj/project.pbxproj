@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		309F5622183F238800FF53CA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F5621183F238800FF53CA /* CoreMIDI.framework */; };
+		668866641A5D4368009C657A /* trailShaderAddon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 668866621A5D4368009C657A /* trailShaderAddon.cpp */; };
+		668866691A5D43A9009C657A /* simpleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 668866651A5D43A9009C657A /* simpleParticle.cpp */; };
+		6688666A1A5D43A9009C657A /* simpleParticleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 668866671A5D43A9009C657A /* simpleParticleManager.cpp */; };
+		66AE505F1A50812200E94193 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE504E1A50812200E94193 /* ofxBaseGui.cpp */; };
+		66AE50601A50812200E94193 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE50501A50812200E94193 /* ofxButton.cpp */; };
+		66AE50611A50812200E94193 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE50531A50812200E94193 /* ofxGuiGroup.cpp */; };
+		66AE50621A50812200E94193 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE50551A50812200E94193 /* ofxLabel.cpp */; };
+		66AE50631A50812200E94193 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE50571A50812200E94193 /* ofxPanel.cpp */; };
+		66AE50641A50812200E94193 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE50591A50812200E94193 /* ofxSlider.cpp */; };
+		66AE50651A50812200E94193 /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE505B1A50812200E94193 /* ofxSliderGroup.cpp */; };
+		66AE50661A50812200E94193 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AE505D1A50812200E94193 /* ofxToggle.cpp */; };
 		66C917E31A069934000812FA /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C9178B1A069933000812FA /* RtMidi.cpp */; };
 		66C917E71A069934000812FA /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C917B41A069933000812FA /* ofxRtMidiIn.cpp */; };
 		66C917E81A069934000812FA /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C917B61A069933000812FA /* ofxRtMidiOut.cpp */; };
@@ -85,6 +96,32 @@
 /* Begin PBXFileReference section */
 		1126B15512AA9E59C063DDEA /* CoreMIDI */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = wrapper.framework; name = CoreMIDI; path = /CoreMIDI; sourceTree = "<group>"; };
 		309F5621183F238800FF53CA /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		668866621A5D4368009C657A /* trailShaderAddon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = trailShaderAddon.cpp; sourceTree = "<group>"; };
+		668866631A5D4368009C657A /* trailShaderAddon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trailShaderAddon.h; sourceTree = "<group>"; };
+		668866651A5D43A9009C657A /* simpleParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleParticle.cpp; sourceTree = "<group>"; };
+		668866661A5D43A9009C657A /* simpleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleParticle.h; sourceTree = "<group>"; };
+		668866671A5D43A9009C657A /* simpleParticleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleParticleManager.cpp; sourceTree = "<group>"; };
+		668866681A5D43A9009C657A /* simpleParticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleParticleManager.h; sourceTree = "<group>"; };
+		6688666C1A5D43DF009C657A /* trailShader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = trailShader.frag; sourceTree = "<group>"; };
+		6688666D1A5D43DF009C657A /* trailShader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = trailShader.vert; sourceTree = "<group>"; };
+		6688666E1A5D43EB009C657A /* DrumTunnel_BG_RS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DrumTunnel_BG_RS.jpg; sourceTree = "<group>"; };
+		66AE504E1A50812200E94193 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseGui.cpp; sourceTree = "<group>"; };
+		66AE504F1A50812200E94193 /* ofxBaseGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseGui.h; sourceTree = "<group>"; };
+		66AE50501A50812200E94193 /* ofxButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxButton.cpp; sourceTree = "<group>"; };
+		66AE50511A50812200E94193 /* ofxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxButton.h; sourceTree = "<group>"; };
+		66AE50521A50812200E94193 /* ofxGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGui.h; sourceTree = "<group>"; };
+		66AE50531A50812200E94193 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiGroup.cpp; sourceTree = "<group>"; };
+		66AE50541A50812200E94193 /* ofxGuiGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGuiGroup.h; sourceTree = "<group>"; };
+		66AE50551A50812200E94193 /* ofxLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLabel.cpp; sourceTree = "<group>"; };
+		66AE50561A50812200E94193 /* ofxLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLabel.h; sourceTree = "<group>"; };
+		66AE50571A50812200E94193 /* ofxPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPanel.cpp; sourceTree = "<group>"; };
+		66AE50581A50812200E94193 /* ofxPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxPanel.h; sourceTree = "<group>"; };
+		66AE50591A50812200E94193 /* ofxSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSlider.cpp; sourceTree = "<group>"; };
+		66AE505A1A50812200E94193 /* ofxSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSlider.h; sourceTree = "<group>"; };
+		66AE505B1A50812200E94193 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSliderGroup.cpp; sourceTree = "<group>"; };
+		66AE505C1A50812200E94193 /* ofxSliderGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSliderGroup.h; sourceTree = "<group>"; };
+		66AE505D1A50812200E94193 /* ofxToggle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxToggle.cpp; sourceTree = "<group>"; };
+		66AE505E1A50812200E94193 /* ofxToggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxToggle.h; sourceTree = "<group>"; };
 		66C917891A069933000812FA /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		66C9178A1A069933000812FA /* RtError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtError.h; sourceTree = "<group>"; };
 		66C9178B1A069933000812FA /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
@@ -194,6 +231,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6688666B1A5D43DF009C657A /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				6688666C1A5D43DF009C657A /* trailShader.frag */,
+				6688666D1A5D43DF009C657A /* trailShader.vert */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		66AE504C1A50812200E94193 /* ofxGui */ = {
+			isa = PBXGroup;
+			children = (
+				66AE504D1A50812200E94193 /* src */,
+			);
+			name = ofxGui;
+			path = ../../../addons/ofxGui;
+			sourceTree = "<group>";
+		};
+		66AE504D1A50812200E94193 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				66AE504E1A50812200E94193 /* ofxBaseGui.cpp */,
+				66AE504F1A50812200E94193 /* ofxBaseGui.h */,
+				66AE50501A50812200E94193 /* ofxButton.cpp */,
+				66AE50511A50812200E94193 /* ofxButton.h */,
+				66AE50521A50812200E94193 /* ofxGui.h */,
+				66AE50531A50812200E94193 /* ofxGuiGroup.cpp */,
+				66AE50541A50812200E94193 /* ofxGuiGroup.h */,
+				66AE50551A50812200E94193 /* ofxLabel.cpp */,
+				66AE50561A50812200E94193 /* ofxLabel.h */,
+				66AE50571A50812200E94193 /* ofxPanel.cpp */,
+				66AE50581A50812200E94193 /* ofxPanel.h */,
+				66AE50591A50812200E94193 /* ofxSlider.cpp */,
+				66AE505A1A50812200E94193 /* ofxSlider.h */,
+				66AE505B1A50812200E94193 /* ofxSliderGroup.cpp */,
+				66AE505C1A50812200E94193 /* ofxSliderGroup.h */,
+				66AE505D1A50812200E94193 /* ofxToggle.cpp */,
+				66AE505E1A50812200E94193 /* ofxToggle.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		66C916ED1A069932000812FA /* ofxMidi */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +442,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				66AE504C1A50812200E94193 /* ofxGui */,
 				66C918081A069975000812FA /* ofxOsc */,
 				66C916ED1A069932000812FA /* ofxMidi */,
 			);
@@ -434,6 +514,14 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6688666E1A5D43EB009C657A /* DrumTunnel_BG_RS.jpg */,
+				6688666B1A5D43DF009C657A /* shaders */,
+				668866621A5D4368009C657A /* trailShaderAddon.cpp */,
+				668866651A5D43A9009C657A /* simpleParticle.cpp */,
+				668866661A5D43A9009C657A /* simpleParticle.h */,
+				668866671A5D43A9009C657A /* simpleParticleManager.cpp */,
+				668866681A5D43A9009C657A /* simpleParticleManager.h */,
+				668866631A5D4368009C657A /* trailShaderAddon.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
@@ -538,28 +626,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				66C918361A069975000812FA /* NetworkingUtilsWin.cpp in Sources */,
+				66AE50601A50812200E94193 /* ofxButton.cpp in Sources */,
+				6688666A1A5D43A9009C657A /* simpleParticleManager.cpp in Sources */,
 				66C917EF1A069934000812FA /* ofxMidi.cpp in Sources */,
 				66C918341A069975000812FA /* NetworkingUtils.cpp in Sources */,
 				66C9183A1A069975000812FA /* OscReceivedElements.cpp in Sources */,
 				66C9183E1A069975000812FA /* ofxOscParameterSync.cpp in Sources */,
 				66C9183D1A069975000812FA /* ofxOscMessage.cpp in Sources */,
 				66C918331A069975000812FA /* IpEndpointName.cpp in Sources */,
+				668866641A5D4368009C657A /* trailShaderAddon.cpp in Sources */,
 				66C918391A069975000812FA /* OscPrintReceivedElements.cpp in Sources */,
 				66C917F11A069934000812FA /* ofxMidiMessage.cpp in Sources */,
+				66AE50651A50812200E94193 /* ofxSliderGroup.cpp in Sources */,
 				66C917F01A069934000812FA /* ofxMidiIn.cpp in Sources */,
+				66AE505F1A50812200E94193 /* ofxBaseGui.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				66C9183C1A069975000812FA /* ofxOscBundle.cpp in Sources */,
 				66C917E71A069934000812FA /* ofxRtMidiIn.cpp in Sources */,
 				66C9183B1A069975000812FA /* OscTypes.cpp in Sources */,
 				66C917F21A069934000812FA /* ofxMidiOut.cpp in Sources */,
+				66AE50611A50812200E94193 /* ofxGuiGroup.cpp in Sources */,
 				66C918401A069975000812FA /* ofxOscSender.cpp in Sources */,
+				66AE50661A50812200E94193 /* ofxToggle.cpp in Sources */,
 				66C918351A069975000812FA /* UdpSocket.cpp in Sources */,
 				66C917EE1A069934000812FA /* ofxBaseMidi.cpp in Sources */,
 				66C9183F1A069975000812FA /* ofxOscReceiver.cpp in Sources */,
+				668866691A5D43A9009C657A /* simpleParticle.cpp in Sources */,
 				66C917E81A069934000812FA /* ofxRtMidiOut.cpp in Sources */,
+				66AE50631A50812200E94193 /* ofxPanel.cpp in Sources */,
 				66C918371A069975000812FA /* UdpSocketWin.cpp in Sources */,
+				66AE50641A50812200E94193 /* ofxSlider.cpp in Sources */,
 				66C918381A069975000812FA /* OscOutboundPacketStream.cpp in Sources */,
 				66C917E31A069934000812FA /* RtMidi.cpp in Sources */,
+				66AE50621A50812200E94193 /* ofxLabel.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
